@@ -1,10 +1,10 @@
-#Robótica Computacional 2017 - Engenharia da Computação (Terceiro Semestre)
-
 ##Projeto - Visão 2
-#Utilizando OpenCV, detectar três círculos alinhados, retornar sua distância e a sua orientação.
+
+#### Descrição:
+Utilizando OpenCV, detectar três círculos alinhados, retornar sua distância e a sua orientação.
 
 
-### Metas
+#### Metas
 [x] Detecta somente os círculos desejados.
 [x] Imprime a distância correta dos três círculos visíveis.
 [x] Imprime a orientação dos círculos alinhados: horizontal, vertical e inclinado.
