@@ -32,18 +32,24 @@ while True:
 		verf_y = np.arange(circles[0][1]-10,circles[0][1]+10,1) #lista de verificacao horizontal, alcance de 20 
 
 		for (x, y, r) in circles: #percorre a matriz de circulos detectados
-			cv2.circle(img, (x, y), r, (255, 0, 255), 4) #desenho do circulo detectado
-			cv2.circle(img, (x, y), 5, (0, 255, 255), -1) #desenho do centro do circulo detectado
-			#cv2.circle(img, centro, raio, cor, espessura)
-
 			for i in range (len(circles)):
 				for j in range (len(circles[i])):
 					if circles[i][1] in (verf_y): 
 						orientacao = "Horizontal"
-					#Se a coordenada Y do centro do circulo estiver na lista verf_y, ela esta alinhada horizontalmente com outro circulo
+						#Se a coordenada Y do centro do circulo estiver na lista verf_y, ela esta alinhada horizontalmente com outro circulo
+					
+						cv2.circle(img, (x, y), r, (255, 0, 255), 4) #desenho do circulo detectado
+						cv2.circle(img, (x, y), 5, (0, 255, 255), -1) #desenho do centro do circulo detectado
+						#cv2.circle(img, centro, raio, cor, espessura)
+
 					elif circles[i][0] in (verf_x):
 						orientacao = "Vertical"
 						#Se a coordenada X do centro do circulo estiver na lista verf_x, ela esta alinhada verticalmente com outro circulo
+					
+						cv2.circle(img, (x, y), r, (255, 0, 255), 4) #desenho do circulo detectado
+						cv2.circle(img, (x, y), 5, (0, 255, 255), -1) #desenho do centro do circulo detectado
+						#cv2.circle(img, centro, raio, cor, espessura)
+
 					else:
 						orientacao = "Inclinado"
 						#caso nao esteja alinhado esta inclinado
