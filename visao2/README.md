@@ -30,17 +30,18 @@ Utilizando OpenCV, detectar três círculos alinhados, retornar sua distância e
 | `minRadius` | tamanho mínimo do raio do circulo a ser detectado |
 | `maxRadius` | tamanho máximo do raio do circulo a ser detectado |
 
-- A função HoughCircles devolve uma matriz contendo a posição **X** e **Y** do centro dos círculos, assim como o seus raios.
+- A função HoughCircles devolve uma matriz contendo a posição **X** e **Y** do centro dos círculos, assim como o seus **raios**.
 ```
 	[[534,201,50],[424,124,52],[523,153,48]]
 ```
 
 - A partir das coordenadas de centro dos círculos, é possível verificar se eles estão alinhados verticalmente ou horizontalmente. Se as coordenadas X dos círculos estiverem próximas, podemos inferir que eles estão verticalmente alinhado. Caso as coordenadas Y estiverem próximas, podemos concluir que os círculos estão horizontalmente alinhados.
 
-##### Calculando a distância do círculo à tela:
-Para calcular a distância, foi preciso obter o foco da webcam. O foco foi obtido utilizando os [princípios da óptica](http://s2.glbimg.com/gdm71wKsRXN87Z3QJQenowTRYHU=/0x0:405x220/400x217/s.glbimg.com/po/ek/f/original/2014/01/07/figura_8.jpg). Foi preciso medir a distância do círculo até a câmera, medir em centímetros a imagem do círculo [obtida](https://i.gyazo.com/2e9c2ba0610f926625c4123f4ab35e2f.png) pela câmera, e o raio real do círculo. Tendo estas informações e aplicando a regra de três, obteve-se que o foco da câmera é aproximadamente 11.
+#### Calculando a distância do círculo à tela:
+Para calcular a distância, era necessário obter o foco da webcam, utilizando os [princípios da óptica](http://s2.glbimg.com/gdm71wKsRXN87Z3QJQenowTRYHU=/0x0:405x220/400x217/s.glbimg.com/po/ek/f/original/2014/01/07/figura_8.jpg). Para isso, foi preciso medir a distância do círculo até a câmera, o tamanho da imagem do círculo [obtida](https://i.gyazo.com/2e9c2ba0610f926625c4123f4ab35e2f.png) pela câmera e o raio real do círculo. Tendo estas informações e aplicando a regra de três, obteve-se que o foco da câmera é aproximadamente 11.
 
-Tendo em mãos o foco da câmera, agora trocamos de variável, buscando a distância entra a câmera e o círculo. 
+Tendo em mãos o foco da câmera, a variável passa a ser a distância entre a câmera e o círculo, dada por:
 ```
 	distancia = foco * raio real em pixels / raio imagem em pixels
 ```
+
