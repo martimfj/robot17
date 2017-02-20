@@ -54,8 +54,11 @@ while True:
 						orientacao = "Inclinado"
 						#caso nao esteja alinhado esta inclinado
 
-		dist = "Distancia da tela: {} cm".format(np.round(f*h/r))
 
+		dist = "Distancia da tela: {} cm".format(np.round(f*h/r))
+		qnt = "Quantidade de circulos detectada: {}".format(len(circles))
+
+		cv2.putText(img,str(qnt),(25,450), font, 1,(255,255,255),2)
 		cv2.putText(img,str(dist),(50,100), font, 1,(0,0,255),2)
 		cv2.putText(img,orientacao,(50,50), font, 1,(0,255,0),2)
 	
