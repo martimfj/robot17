@@ -6,6 +6,7 @@ Utilizando OpenCV, detectar três círculos alinhados, retornar sua distância e
 
 ### Metas
 - [x] Detecta somente os círculos desejados.
+- [X] Imprime a quantidade de círculos detectada
 - [x] Imprime a distância correta dos três círculos visíveis.
 - [x] Imprime a orientação dos círculos alinhados: horizontal, vertical e inclinado.
 - [ ] Excluí circulos de diferentes raios e/ou não tem centros colineares.
@@ -23,7 +24,7 @@ Utilizando OpenCV, detectar três círculos alinhados, retornar sua distância e
 | --- | --- |
 | `image` | imagem a ser analisada. Neste caso, usamos o video da webcam |
 | `method` | método a ser usado para detectar os círculos. Neste caso, o usado foi cv2.HOUGH_GRADIENT |
-| `dp` | "Este parâmetro é a razão inversa da resolução do acumulador para a resolução da imagem (ver [Yuen et al](http://www.bmva.org/bmvc/1989/avc-89-029.pdf) para mais detalhes). Essencialmente, quanto maior for o dp, menor será a matriz do acumulador." |
+| `dp` | "Este parâmetro é a razão inversa da resolução do acumulador para a resolução da imagem (ver [Yuen et al](http://www.bmva.org/bmvc/1989/avc-89-029.pdf) para mais detalhes). Essencialmente, quanto maior for o dp, menor será a matriz do acumulador, isto é, mais círculos serão detectados" |
 | `minDist` | menor distância dos centros (x,y) entre os círculos detectados |
 | `param1` | irrelevante para o projeto |
 | `param2` | irrelevante para o projeto |

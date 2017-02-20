@@ -15,7 +15,7 @@ while True:
 	ret, img = cap.read() #define a "imagem" que o codigo vai iterar
 	image =cv2.GaussianBlur(img,(5,5),10)
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-	circles = cv2.HoughCircles(gray, cv.CV_HOUGH_GRADIENT, 1.2, 100,minRadius=5,maxRadius=230) 
+	circles = cv2.HoughCircles(gray, cv.CV_HOUGH_GRADIENT, 1.3, 20,minRadius=5,maxRadius=230) 
 	#matriz de circulos detectados por milisegundo. [x, y, raio]
 
 	if circles is None:
@@ -29,7 +29,7 @@ while True:
 	else:
 		circles = np.round(circles[0, :]).astype("int") #arredonda os numeros da matriz como int
 		verf_x = np.arange(circles[0][0]-10,circles[0][0]+10,1) #lista de verificacao vertical, alcance de 20
-		verf_y = np.arange(circles[0][1]-10,circles[0][1]+10,1) #lista de verificacao horizontal, alcance de 20 
+		verf_y = np.arange(circles[0][1]-10,circles[0][1]+10,1) #lista de verificacao horizontal, alcance de 20
 
 		for (x, y, r) in circles: #percorre a matriz de circulos detectados
 			for i in range (len(circles)):
@@ -37,7 +37,7 @@ while True:
 					if circles[i][1] in (verf_y): 
 						orientacao = "Horizontal"
 						#Se a coordenada Y do centro do circulo estiver na lista verf_y, ela esta alinhada horizontalmente com outro circulo
-					
+						
 						cv2.circle(img, (x, y), r, (255, 0, 255), 4) #desenho do circulo detectado
 						cv2.circle(img, (x, y), 5, (0, 255, 255), -1) #desenho do centro do circulo detectado
 						#cv2.circle(img, centro, raio, cor, espessura)
